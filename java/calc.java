@@ -5,8 +5,8 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
 
         // Display calculator options
-        System.out.println("Simple Java Calculator");
-        System.out.println("Choose an operation: +, -, *, /");
+        System.out.println("Extended Java Calculator");
+        System.out.println("Choose an operation: +, -, *, /, %, ^ (modulus, exponentiation)");
         char operator = scanner.next().charAt(0);
 
         // Input first and second number
@@ -36,6 +36,17 @@ public class Calculator {
                     System.out.println("Error! Division by zero.");
                     return;
                 }
+                break;
+            case '%':
+                if (num2 != 0) {
+                    result = num1 % num2;
+                } else {
+                    System.out.println("Error! Division by zero.");
+                    return;
+                }
+                break;
+            case '^':
+                result = Math.pow(num1, num2);
                 break;
             default:
                 System.out.println("Invalid operator!");
